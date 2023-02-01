@@ -2,7 +2,7 @@ package com.techreturners.encapsulation.bankaccount.app;
 
 import com.techreturners.encapsulation.bankaccount.model.DodgyBankAccount;
 import com.techreturners.encapsulation.bankaccount.model.SecureBankAccount;
-
+import com.techreturners.encapsulation.bankaccount.model.WeatherReporter;
 public class Main {
 
     private static final String MYACCOUNTNUMBER = "ABCDEFG123";
@@ -62,6 +62,20 @@ public class Main {
         //mySecureBankAccount.accountBalance = 1000000;
         mySecureBankAccount.displayAccountBalance();
         System.out.println("😹 Well I guess that's secure!");
+
+
+        // WEATHER REPORT
+        WeatherReporter weatherReporter1 = new WeatherReporter("London", 7.33);
+        System.out.println(weatherReporter1.GetReport());
+
+        WeatherReporter weatherReporter2 = new WeatherReporter("Kingston", -33.2);
+        System.out.println(weatherReporter2.GetReport());
+
+        WeatherReporter weatherReporter3 = new WeatherReporter("California", 31);
+        System.out.println(weatherReporter3.GetReport());
+
+        WeatherReporter weatherReporter4 = new WeatherReporter("Cape Town", 10);
+        System.out.println(weatherReporter4.GetReport());
     }
 
 }
