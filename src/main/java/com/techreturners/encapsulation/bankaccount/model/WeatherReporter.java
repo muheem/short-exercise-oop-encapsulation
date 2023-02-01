@@ -4,49 +4,35 @@ import java.text.MessageFormat;
 
 public class WeatherReporter {
 
-    public String location;
-    public double temperature;
+    private String location;
+    private double temperature; // in Celsius
 
     public WeatherReporter(String location, double temperature) {
         this.location = location;
         this.temperature = temperature;
     }
 
-    public String print() {
-
-        double newTemp = (9.0 / 5.0) * temperature + 32;
-        return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.", location, check1(), check2(), newTemp);
-
+    public String GetReport() {
+        double newTemp = 1.8 * (temperature) + 32;
+        return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.", location, checkWeather(), checkTemperature(), newTemp);
     }
 
-    public String check1() {
-        if (location == "London") {
-
+    public String checkWeather() {
+        if (location.equals("London"))
             return "🌦";
-
-        } else if (location == "California") {
-
+        if (location.equals("California"))
             return "🌅";
-
-        } else if (location == "Cape Town") {
-
+        if (location.equals("Cape Town"))
             return "🌤";
 
-        }
         return "🔆";
     }
 
-    public String check2() {
-        if (temperature > 30) {
-
+    public String checkTemperature() {
+        if (temperature > 30)
             return "It's too hot 🥵!";
-
-        } else if (temperature < 10) {
-
+        if (temperature < 10)
             return "It's too cold 🥶!";
-
-        }
         return "Ahhh...it's just right 😊!";
-    }
-
+        }
 }
